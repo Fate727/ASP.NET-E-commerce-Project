@@ -1,0 +1,250 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<Users> signInManager;
+@inject UserManager<Users> userManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Techhive</title>
+    <script type="importmap"></script>
+
+    <link rel="stylesheet" href="~/admin/css/animate.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/css/animation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/css/bootstrap.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/css/bootstrap-select.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/font/fonts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/icon/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/admin/css/custom.css" asp-append-version="true" />
+
+    <link rel="shortcut icon" href="~/admin/images/favicon.ico" asp-append-version="true" />
+    <link rel="apple-touch-icon-precomposed" href="~/admin/images/favicon.ico" asp-append-version="true" />
+
+</head>
+
+<body class="body"> 
+    <div id="wrapper"> 
+        <div id="page" class=""> 
+            <div class="layout-wrap"> 
+
+                <!-- <div id="preload" class="preload-container">
+                    <div class="preloading">
+                        <span></span>
+                    </div>
+                </div> -->
+
+                <div class="section-menu-left">
+                    <div class="box-logo">
+                        <a asp-area="" asp-controller="Admin" asp-action="Dashboard">
+                            <p class="fs-1 text-center">Techhive ControllPanel</p>
+                        </a>
+                        <div class="button-show-hide">
+                            <i class="icon-menu-left"></i>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="center-item">
+                            <div class="center-heading">Main Home</div>
+                            <ul class="menu-list">
+                                <li class="menu-item">
+                                    <a asp-area="" asp-controller="Admin" asp-action="Dashboard">
+                                        <div class="icon"><i class="icon-grid"></i></div>
+                                        <div class="text">Dashboard</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="center-item">
+                            <ul class="menu-list">
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon"><i class="icon-shopping-cart"></i></div>
+                                        <div class="text">Products</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a asp-area="" asp-controller="Product" asp-action="AddProduct">
+                                                <div class="text">Add Product</div>
+                                            </a>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <a asp-area="" asp-controller="Product" asp-action="ListProduct">
+                                                <div class="text">Products</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon"><i class="icon-layers"></i></div>
+                                        <div class="text">Brand</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a asp-area="" asp-controller="Admin" asp-action="Add_Brand">
+                                                <div class="text">New Brand</div>
+                                            </a>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <a asp-area="" asp-controller="Admin" asp-action="Brand_list">
+                                                <div class="text">Brands</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item has-children">
+                                    <a href="javascript:void(0);" class="menu-item-button">
+                                        <div class="icon"><i class="icon-file-plus"></i></div>
+                                        <div class="text">Order</div>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <a asp-area="" asp-controller="Order" asp-action="adminOrderList" class="">
+                                                <div class="text">Orders</div>
+                                            </a>
+                                        </li>                                      
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a asp-area="" asp-controller="Admin" asp-action="Feedback">
+                                        <div class="icon"><i class="icon-mail"></i></div>
+                                        <div class="text">Feedback</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a asp-area="" asp-controller="Admin" asp-action="Trending">
+                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="text">Trending</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="users.html" class="">
+                                        <div class="icon"><i class="icon-user"></i></div>
+                                        <div class="text">User</div>
+                                    </a>
+                                </li> 
+                                <li class="menu-item">
+                                    <a asp-area="" asp-controller="Admin" asp-action="AdminDetail">
+                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="text">Settings</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-content-right">
+                <div class="header-dashboard">
+                    <div class="wrap">
+                        <div class="header-left">
+                            <a href="index-2.html">
+                                <img class="" id="logo_header_mobile" alt="" src="~Admin/images/logo/logo.png"
+                                     data-light="images/logo/logo.png" data-dark="~Admin/images/logo/logo.png"
+                                         data-width="154px" data-height="52px" data-retina="~Admin/images/logo/logo.png">
+                            </a>
+                            <div class="button-show-hide">
+                                <i class="icon-menu-left"></i>
+                            </div>
+
+
+                        </div>
+                        <div class="header-grid">
+
+                              
+                                <div class="popup-wrap user type-header">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="header-user wg-user">
+                                                <span class="image">
+                                                    <img src="images/avatar/user-1.png" alt=""> <!-- You can also dynamically set this based on user -->
+                                                </span>
+                                                <span class="flex flex-column">
+                                                    @if (signInManager.IsSignedIn(User))
+                                                    {
+                                                        var user = await userManager.GetUserAsync(User);
+                                                        <span class="body-title mb-2">@user?.FullName</span>
+                                                        <span class="text-tiny">@string.Join(", ", await userManager.GetRolesAsync(user))</span> <!-- Show roles dynamically -->
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="body-title mb-2">Guest</span> <!-- If not signed in -->
+                                                        <span class="text-tiny">Not logged in</span>
+                                                    }
+                                                </span>
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3">
+                                            <li>
+                                                <a href="#" class="user-item">
+                                                    <div class="icon">
+                                                        <i class="icon-user"></i>
+                                                    </div>
+                                                    <div class="body-title-2">Account</div>
+                                                </a>
+                                            </li>
+                                            @if (signInManager.IsSignedIn(User))
+                                            {
+                                                <li>
+                                                    <a asp-controller="Admin" asp-action="Logout" class="user-item">
+                                                        <div class="icon">
+                                                            <i class="icon-log-out"></i>
+                                                        </div>
+                                                        <div class="body-title-2">Logout</div>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div id="success-message" class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-3 p-3"
+                             role="alert" style="z-index: 1050; width: 400px; height:40px; font-size: 13px;">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <script>
+                            setTimeout(function () {
+                            var alertBox = document.getElementById("success-message");
+                            if (alertBox) {
+                            alertBox.style.display = "none";
+                            }
+                            }, 3000);
+                        </script>
+                    }
+
+                    <div class="main-content">
+
+                        @RenderBody()
+
+
+                        <div class="bottom-page">
+                            <div class="body-text">Copyright © 2024 Techhive</div>
+                        </div>
+                </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="~/admin/js/jquery.min.js" asp-append-version="true"></script>
+        <script src="~/admin/js/bootstrap.min.js" asp-append-version="true"></script>
+        <script src="~/admin/js/bootstrap-select.min.js" asp-append-version="true"></script>
+        <script src="~/admin/js/apexcharts/apexcharts.js" asp-append-version="true"></script>
+        <script src="~/admin/js/main.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+
+</body>
+</html>

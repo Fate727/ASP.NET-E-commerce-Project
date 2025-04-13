@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Cart section ";
+    Layout = "~/Views/Shared/_userlayout.cshtml";
+}
+
+<main class="pt-90">
+    <div class="mb-4 pb-4"></div>
+    <section class="shop-checkout container">
+        <h2 class="page-title">Cart</h2>
+        <div class="checkout-steps">
+            <a asp-action="Cart" asp-area="" asp-controller="User" class="checkout-steps__item active">
+                <span class="checkout-steps__item-number">01</span>
+                <span class="checkout-steps__item-title">
+                    <span>Shopping Bag</span>
+                    <em>Manage Your Items List</em>
+                </span>
+            </a>
+            <a asp-action="CheckOut" asp-area="" asp-controller="Order" class="checkout-steps__item">
+                <span class="checkout-steps__item-number">02</span>
+                <span class="checkout-steps__item-title">
+                    <span>Shipping and Checkout</span>
+                    <em>Checkout Your Items List</em>
+                </span>
+            </a>
+            <a asp-action="OrderConfirmation" asp-area="" asp-controller="Order" class="checkout-steps__item">
+                <span class="checkout-steps__item-number">03</span>
+                <span class="checkout-steps__item-title">
+                    <span>Confirmation</span>
+                    <em>Review And Submit Your Order</em>
+                </span>
+            </a>
+        </div>
+        <div class="shopping-cart">
+            <div class="cart-table__wrapper">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th></th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr id="cart-item-@item.Product.P_Id">
+                                <td>
+                                    <div class="shopping-cart__product-item">
+                                        <img loading="lazy" src="@item.Product.Image1" width="120" height="120" alt="@item.Product.Name" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="shopping-cart__product-item__detail">
+                                        <h4>@item.Product.Name</h4>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="shopping-cart__product-price">MRP. @item.Product.Price</span>
+                                </td>
+                                <td>
+                                    <div class="qty-control position-relative">
+                                        <input type="number" name="quantity" value="@item.Quantity" min="1" class="qty-control__number text-center"
+                                               onchange="updateCart(@item.Product.P_Id, this.value)">
+                                        <div class="qty-control__reduce" onclick="updateCart(@item.Product.P_Id, @item.Quantity - 1)">-</div>
+                                        <div class="qty-control__increase" onclick="updateCart(@item.Product.P_Id, @item.Quantity + 1)">+</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="shopping-cart__subtotal">MRP. @(item.Product.Price * item.Quantity)</span>
+                                </td>
+                                <td>
+                                    <button onclick="removeItem(@item.Product.P_Id)" class="remove-cart">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                                            <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="cart-table-footer">
+                    <button class="btn btn-light">UPDATE CART</button>
+                </div>
+            </div>
+            <div class="shopping-cart__totals-wrapper">
+                <div class="sticky-content">
+                    <div class="shopping-cart__totals">
+                        <h3>Cart Totals</h3>
+                        <table class="cart-totals">
+                            <tbody>
+                                <tr>
+                                    <th>Subtotal</th>
+                                    <td>$@Model.TotalPrice</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <a href="#" class="menu-link menu-link_us-s">CHANGE ADDRESS</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>MRP.@Model.TotalPrice</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mobile_fixed-btn_wrapper">
+                        <div class="button-wrapper container">
+                            <a asp-action="CheckOut" asp-controller="Order" asp-area="" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Function to update cart quantity
+    function updateCart(productId, quantity) {
+        if (quantity < 1) return;
+
+        fetch('/Cart/UpdateQuantity', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: productId, quantity: quantity })
+        }).then(response => {
+            if (response.ok) {
+                location.reload(); // Reload the page to reflect changes
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    // Function to remove item from cart
+        function removeItem(productId) {
+        if (!confirm("Are you sure you want to remove this item from your cart?")) return;
+
+        fetch('/Cart/RemoveFromCart/' + productId, {
+            method: 'POST',
+        }).then(response => {
+            if (response.ok) {
+                // Optionally remove item from the DOM if necessary
+                document.getElementById('cart-item-' + productId).remove(); // Remove item from the DOM
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>

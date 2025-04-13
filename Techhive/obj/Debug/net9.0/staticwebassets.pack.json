@@ -1,0 +1,1045 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Techhive.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Techhive.fna7dchmgp.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\animate.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\animation.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\animation.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\bootstrap-select.min.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\bootstrap-select.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\custom.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\custom.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\style.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\style.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\css\\sweetalert.min.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\sweetalert.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\font\\fonts.css",
+      "PackagePath": "staticwebassets\\Admin\\font\\fonts.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\icon\\fonts\\icomoon93d993d9.eot",
+      "PackagePath": "staticwebassets\\Admin\\icon\\fonts\\icomoon93d993d9.eot"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\icon\\fonts\\icomoon93d993d9.svg",
+      "PackagePath": "staticwebassets\\Admin\\icon\\fonts\\icomoon93d993d9.svg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\icon\\fonts\\icomoon93d993d9.ttf",
+      "PackagePath": "staticwebassets\\Admin\\icon\\fonts\\icomoon93d993d9.ttf"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\icon\\fonts\\icomoon93d993d9.woff",
+      "PackagePath": "staticwebassets\\Admin\\icon\\fonts\\icomoon93d993d9.woff"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\icon\\style.css",
+      "PackagePath": "staticwebassets\\Admin\\icon\\style.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\avatar\\user-1.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\avatar\\user-1.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\bg-menu\\img-1.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\bg-menu\\img-1.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\bg-menu\\img-2.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\bg-menu\\img-2.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\bg-menu\\img-3.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\bg-menu\\img-3.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\bg-menu\\img-4.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\bg-menu\\img-4.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\bg-menu\\img-5.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\bg-menu\\img-5.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\Admin\\images\\favicon.ico"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\logo\\logo.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\17.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\17.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\18.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\18.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\19.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\19.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\20.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\20.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\21.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\21.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\22.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\22.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\images\\products\\23.png",
+      "PackagePath": "staticwebassets\\Admin\\images\\products\\23.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\apexcharts\\apexcharts.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\apexcharts\\apexcharts.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\bootstrap-select.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\bootstrap-select.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\jvectormap-1.2.2.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\jvectormap-1.2.2.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\jvectormap-us-lcc.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\jvectormap-us-lcc.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\jvectormap.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\jvectormap.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\main.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\main.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\morris.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\morris.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\morris.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\morris.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\raphael.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\raphael.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\sweetalert.min.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\sweetalert.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\Admin\\js\\zoom.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\zoom.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\css\\custom.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\css\\plugins\\swiper.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\plugins\\swiper.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\fonts\\SofiaProBold.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\SofiaProBold.woff"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\about\\about-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\about-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\avatar.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\avatar.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\cart-item-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cart-item-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\cart-item-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cart-item-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\cart-item-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cart-item-3.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon.ico"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_1.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_10.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_2.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_3.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_4.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_5.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_6.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_7.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_8.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\category_9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\category_9.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-0-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-0-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-0-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-0-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-1-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-1-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-1-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-1-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-10.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-11.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-2-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-2-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-2-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-2-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-3-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-3-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-3-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-3-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-4.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-5.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-6.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-7.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-8.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\product-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\product-9.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\home\\demo3\\slideshow-character1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\demo3\\slideshow-character1.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_0-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_0-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_0-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_0-2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_0-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_0-3.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_0.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_0.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_1-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_1-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_10-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_10-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_10.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_2-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_2-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_3-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_3-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_3.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_4-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_4-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_4.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_5-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_5-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_5.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_6-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_6-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_6.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_7-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_7-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_7.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_8-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_8-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_8.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_9-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_9-1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\products\\product_9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product_9.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\shop\\shop_banner3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\shop_banner3.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\slideshow-character1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slideshow-character1.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\images\\slideshow-character2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slideshow-character2.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\plugins\\bootstrap-slider.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\bootstrap-slider.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\plugins\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\plugins\\countdown.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\countdown.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\plugins\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\plugins\\swiper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\swiper.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\assets\\js\\theme.js",
+      "PackagePath": "staticwebassets\\assets\\js\\theme.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\about.jpg",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\about.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\about2.jpg",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\about2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\backgorund1.webp",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\backgorund1.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\background2.jpeg",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\background2.jpeg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\background3.webp",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\background3.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\slider1.webp",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\slider1.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\slider2.jpg",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\slider2.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\SliderIMg\\slider3.jpg",
+      "PackagePath": "staticwebassets\\images\\SliderIMg\\slider3.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\064b1d18-3718-4b73-af60-d8a3acb9da38.png",
+      "PackagePath": "staticwebassets\\images\\brands\\064b1d18-3718-4b73-af60-d8a3acb9da38.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\11746dc6-02e3-4f87-9e3a-505abc7de19e.png",
+      "PackagePath": "staticwebassets\\images\\brands\\11746dc6-02e3-4f87-9e3a-505abc7de19e.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\2308ccb7-48ab-4046-b6f3-4d12958aadd8.png",
+      "PackagePath": "staticwebassets\\images\\brands\\2308ccb7-48ab-4046-b6f3-4d12958aadd8.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\32aaf564-ca11-4c74-9301-f1fe09b778b9.png",
+      "PackagePath": "staticwebassets\\images\\brands\\32aaf564-ca11-4c74-9301-f1fe09b778b9.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\3d415efe-f433-43cf-a8a7-9e2a203f67b4.png",
+      "PackagePath": "staticwebassets\\images\\brands\\3d415efe-f433-43cf-a8a7-9e2a203f67b4.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\443274bf-3fb4-4ed0-9824-7f7f0d525a9c.png",
+      "PackagePath": "staticwebassets\\images\\brands\\443274bf-3fb4-4ed0-9824-7f7f0d525a9c.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\5674c50f-8df9-428c-bad4-4590283e2551.png",
+      "PackagePath": "staticwebassets\\images\\brands\\5674c50f-8df9-428c-bad4-4590283e2551.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\57a21917-255a-4463-968e-edecc443eb7a.png",
+      "PackagePath": "staticwebassets\\images\\brands\\57a21917-255a-4463-968e-edecc443eb7a.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\6566943e-323e-4b3f-aeb2-a70ccdeecb7a.png",
+      "PackagePath": "staticwebassets\\images\\brands\\6566943e-323e-4b3f-aeb2-a70ccdeecb7a.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\c415caff-43ef-4fa2-8f09-c5e920e034da.png",
+      "PackagePath": "staticwebassets\\images\\brands\\c415caff-43ef-4fa2-8f09-c5e920e034da.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\d6ba47fd-dff5-4b86-ad70-15dce731982b.png",
+      "PackagePath": "staticwebassets\\images\\brands\\d6ba47fd-dff5-4b86-ad70-15dce731982b.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\e658d2f1-ae53-4bae-a3c0-16dcc49cf3c9.png",
+      "PackagePath": "staticwebassets\\images\\brands\\e658d2f1-ae53-4bae-a3c0-16dcc49cf3c9.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\f011af1b-3a55-4648-a088-6fb248ec03a8.png",
+      "PackagePath": "staticwebassets\\images\\brands\\f011af1b-3a55-4648-a088-6fb248ec03a8.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\brands\\f38bbafa-a0c6-4d74-a6ea-c9b01ca6a1ab.png",
+      "PackagePath": "staticwebassets\\images\\brands\\f38bbafa-a0c6-4d74-a6ea-c9b01ca6a1ab.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\043cc231-ecff-4317-8087-21701f9ae46f.webp",
+      "PackagePath": "staticwebassets\\images\\products\\043cc231-ecff-4317-8087-21701f9ae46f.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\059de3f6-5899-493d-aec6-62d6577d1825.png",
+      "PackagePath": "staticwebassets\\images\\products\\059de3f6-5899-493d-aec6-62d6577d1825.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\0b099d56-c8ec-4028-9e8a-fa151e078a3a.webp",
+      "PackagePath": "staticwebassets\\images\\products\\0b099d56-c8ec-4028-9e8a-fa151e078a3a.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\12f2027c-7e8e-40e1-84b2-db06466723f1.webp",
+      "PackagePath": "staticwebassets\\images\\products\\12f2027c-7e8e-40e1-84b2-db06466723f1.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\13a08f6e-0c41-40a8-83a4-1f568dc2a4aa.webp",
+      "PackagePath": "staticwebassets\\images\\products\\13a08f6e-0c41-40a8-83a4-1f568dc2a4aa.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\13e5c882-8aea-4017-8640-244fafda4469.avif",
+      "PackagePath": "staticwebassets\\images\\products\\13e5c882-8aea-4017-8640-244fafda4469.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\1d8c47b4-7924-4b4d-bb74-7d12fb8cdab9.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\1d8c47b4-7924-4b4d-bb74-7d12fb8cdab9.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\1f5e64b9-1786-4371-869f-55cea276a203.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\1f5e64b9-1786-4371-869f-55cea276a203.jpeg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\226028ff-7583-41a7-b2ea-4587978de179.webp",
+      "PackagePath": "staticwebassets\\images\\products\\226028ff-7583-41a7-b2ea-4587978de179.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\25b64a54-c925-4294-a981-bcb24455fda7.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\25b64a54-c925-4294-a981-bcb24455fda7.jpeg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\2704c728-88a1-45f1-b2d9-befe77fcd3ea.webp",
+      "PackagePath": "staticwebassets\\images\\products\\2704c728-88a1-45f1-b2d9-befe77fcd3ea.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\2a84f91c-e500-4916-9a92-a9bcba69e35e.webp",
+      "PackagePath": "staticwebassets\\images\\products\\2a84f91c-e500-4916-9a92-a9bcba69e35e.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\2d7ae2bd-ba96-4035-b6d5-bf6fddf8fb65.webp",
+      "PackagePath": "staticwebassets\\images\\products\\2d7ae2bd-ba96-4035-b6d5-bf6fddf8fb65.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\389f7a13-a78d-4d1f-9dcc-338221c25227.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\389f7a13-a78d-4d1f-9dcc-338221c25227.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\3fe57e40-5724-46ba-af38-558eee8df187.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\3fe57e40-5724-46ba-af38-558eee8df187.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\4134d7ff-2226-4265-b927-06d55cac3fc2.webp",
+      "PackagePath": "staticwebassets\\images\\products\\4134d7ff-2226-4265-b927-06d55cac3fc2.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\4316aa1a-9076-433a-b63f-db6a1fdce78d.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4316aa1a-9076-433a-b63f-db6a1fdce78d.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\450d4694-54de-4c92-a035-3e023f1655db.webp",
+      "PackagePath": "staticwebassets\\images\\products\\450d4694-54de-4c92-a035-3e023f1655db.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\460da45b-4db7-4572-b3fa-9623ced9691a.webp",
+      "PackagePath": "staticwebassets\\images\\products\\460da45b-4db7-4572-b3fa-9623ced9691a.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\47a565db-dae5-4ee9-b943-ecd95cfdc9d8.avif",
+      "PackagePath": "staticwebassets\\images\\products\\47a565db-dae5-4ee9-b943-ecd95cfdc9d8.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\47ca3c17-c75b-4093-8b67-b5fac80eac4b.avif",
+      "PackagePath": "staticwebassets\\images\\products\\47ca3c17-c75b-4093-8b67-b5fac80eac4b.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\57b04eb8-66f2-4a28-97c6-e5bee42bdc09.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\57b04eb8-66f2-4a28-97c6-e5bee42bdc09.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\58c55438-263b-42fd-9477-9a05dddf0654.webp",
+      "PackagePath": "staticwebassets\\images\\products\\58c55438-263b-42fd-9477-9a05dddf0654.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\5df6242e-5542-42ea-9294-d7a0c425ccda.webp",
+      "PackagePath": "staticwebassets\\images\\products\\5df6242e-5542-42ea-9294-d7a0c425ccda.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\5e1065cd-e507-4448-a665-3dc7d7127f1b.webp",
+      "PackagePath": "staticwebassets\\images\\products\\5e1065cd-e507-4448-a665-3dc7d7127f1b.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\5f393166-865d-40fc-b60b-cfef49e13321.avif",
+      "PackagePath": "staticwebassets\\images\\products\\5f393166-865d-40fc-b60b-cfef49e13321.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\64c160c4-4422-403e-b25a-1c6ebc226292.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\64c160c4-4422-403e-b25a-1c6ebc226292.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\71dd9668-14dc-4bab-a69b-3dccbab67719.png",
+      "PackagePath": "staticwebassets\\images\\products\\71dd9668-14dc-4bab-a69b-3dccbab67719.png"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\73182a81-7545-4630-9a02-9482c0237030.webp",
+      "PackagePath": "staticwebassets\\images\\products\\73182a81-7545-4630-9a02-9482c0237030.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\732f209b-1720-489a-8362-a6cba99c6729.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\732f209b-1720-489a-8362-a6cba99c6729.jpeg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\734caf5c-128f-4f35-91b1-696739365027.webp",
+      "PackagePath": "staticwebassets\\images\\products\\734caf5c-128f-4f35-91b1-696739365027.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\8a58e528-0b1d-4f5c-b495-254406d714e1.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\8a58e528-0b1d-4f5c-b495-254406d714e1.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\94979b26-0f63-44db-9c08-5a669dfe32b3.webp",
+      "PackagePath": "staticwebassets\\images\\products\\94979b26-0f63-44db-9c08-5a669dfe32b3.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\9f9edca2-5801-445a-8c94-6f22a17e559c.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\9f9edca2-5801-445a-8c94-6f22a17e559c.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\a0a66c95-c6ee-4a14-94b2-8eb61240a317.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\a0a66c95-c6ee-4a14-94b2-8eb61240a317.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\a71ec28f-5b26-4184-a2ec-a9a8bf935d56.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\a71ec28f-5b26-4184-a2ec-a9a8bf935d56.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\a7a8eede-d089-463a-a929-309362a8d54a.avif",
+      "PackagePath": "staticwebassets\\images\\products\\a7a8eede-d089-463a-a929-309362a8d54a.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\a7d2c082-e8aa-446f-bb18-9218b433cad2.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\a7d2c082-e8aa-446f-bb18-9218b433cad2.jpeg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\acd9c936-1bf9-4cdd-9bb5-f3f217a37092.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\acd9c936-1bf9-4cdd-9bb5-f3f217a37092.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\ae357286-b349-48ea-a4ae-070b5c70b228.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\ae357286-b349-48ea-a4ae-070b5c70b228.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\b377be7a-375b-41bd-83b5-d77cd8c83787.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b377be7a-375b-41bd-83b5-d77cd8c83787.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\b7312176-07e4-4c0e-bbae-f18bc0069743.webp",
+      "PackagePath": "staticwebassets\\images\\products\\b7312176-07e4-4c0e-bbae-f18bc0069743.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\b8f40fe9-1b01-4666-81ac-666bf1d5f4fa.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b8f40fe9-1b01-4666-81ac-666bf1d5f4fa.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\bf741998-f1e2-4203-a038-ce23c324247c.avif",
+      "PackagePath": "staticwebassets\\images\\products\\bf741998-f1e2-4203-a038-ce23c324247c.avif"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\c05533a8-feaa-4784-8594-c5007ec92e00.webp",
+      "PackagePath": "staticwebassets\\images\\products\\c05533a8-feaa-4784-8594-c5007ec92e00.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\c202bd65-3b7f-43ac-8b07-dacd6041f8cf.webp",
+      "PackagePath": "staticwebassets\\images\\products\\c202bd65-3b7f-43ac-8b07-dacd6041f8cf.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\c99a5373-13bd-46fd-91ad-75b2d349d8fa.webp",
+      "PackagePath": "staticwebassets\\images\\products\\c99a5373-13bd-46fd-91ad-75b2d349d8fa.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\d32b2d28-9654-4d79-a76b-522d8e427103.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\d32b2d28-9654-4d79-a76b-522d8e427103.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e1b13784-a0bd-4556-aed0-0ca0a6786419.webp",
+      "PackagePath": "staticwebassets\\images\\products\\e1b13784-a0bd-4556-aed0-0ca0a6786419.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e49c07a2-8f57-4b67-a1ae-e56df98c357d.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e49c07a2-8f57-4b67-a1ae-e56df98c357d.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e4c0cdf9-8bf0-41b9-a2fb-2f67884ec59b.webp",
+      "PackagePath": "staticwebassets\\images\\products\\e4c0cdf9-8bf0-41b9-a2fb-2f67884ec59b.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e76d40c0-204b-4cff-8a71-c090023be005.webp",
+      "PackagePath": "staticwebassets\\images\\products\\e76d40c0-204b-4cff-8a71-c090023be005.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e7c21a46-d66f-4f1f-900d-3b3ee46ff1c4.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e7c21a46-d66f-4f1f-900d-3b3ee46ff1c4.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\e955652b-79d6-4db6-8803-2fee92cb56c2.webp",
+      "PackagePath": "staticwebassets\\images\\products\\e955652b-79d6-4db6-8803-2fee92cb56c2.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\ea607457-1592-40f8-9ae4-ab50e331305c.webp",
+      "PackagePath": "staticwebassets\\images\\products\\ea607457-1592-40f8-9ae4-ab50e331305c.webp"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\eb51950d-2b43-4a68-9fa5-77d431ae9163.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\eb51950d-2b43-4a68-9fa5-77d431ae9163.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\images\\products\\f64cb002-e872-45ce-b946-dc86b966e611.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\f64cb002-e872-45ce-b946-dc86b966e611.jpg"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "D:\\BCA 6th sem\\Project\\Techhive\\Techhive\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Techhive.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Techhive.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Techhive.props",
+      "PackagePath": "build\\Techhive.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Techhive.props",
+      "PackagePath": "buildMultiTargeting\\Techhive.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Techhive.props",
+      "PackagePath": "buildTransitive\\Techhive.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

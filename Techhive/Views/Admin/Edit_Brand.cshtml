@@ -1,0 +1,90 @@
+﻿@model Techhive.Models.Brand
+
+@{
+    ViewData["Title"] = "Edit - Brand";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Brand Information</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a asp-controller="Admin" asp-action="Dashboard">
+                        <div class="text-tiny">Dashboard</div>
+                    </a>
+                </li>
+                <li><i class="icon-chevron-right"></i></li>
+                <li>
+                    <a asp-controller="Admin" asp-action="Brand_list">
+                        <div class="text-tiny">Brands</div>
+                    </a>
+                </li>
+                <li><i class="icon-chevron-right"></i></li>
+                <li><div class="text-tiny">Edit Brand</div></li>
+            </ul>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success fs-1">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger fs-1">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <div class="wg-box">
+            <form asp-action="Edit_Brand" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="B_Id" />
+                <input type="hidden" asp-for="Image" />
+
+                <fieldset class="name">
+                    <div class="body-title">Brand Name <span class="tf-color-1">*</span></div>
+                    <input class="flex-grow mb-3" type="text" placeholder="Brand name" asp-for="Name" required>
+                    <span asp-validation-for="Name" class="text-danger fs-1 mt-2"></span>
+                </fieldset>
+
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    <div class="body-title">Current Image</div>
+                    <img id="brandImagePreview"
+                         src="@(string.IsNullOrEmpty(Model.Image) ? "/images/placeholder.png" : Model.Image)"
+                         alt="Brand Image" class="img-thumbnail" style="width: 150px; height: 150px;">
+                </div>
+
+                <!-- Image Upload -->
+                <fieldset class="name mt-3">
+                    <div class="body-title">Upload New Image</div>
+                    <input class="form-control" type="file" name="BrandImage" id="BrandImageInput" accept="image/*">
+                </fieldset>
+
+                <div class="bot mt-5">
+                    <button class="tf-button w208" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Html.Partial("_ValidationScriptsPartial")
+    <script>
+        document.getElementById("BrandImageInput").addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("brandImagePreview").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

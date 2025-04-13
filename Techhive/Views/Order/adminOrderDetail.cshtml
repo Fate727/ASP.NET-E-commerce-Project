@@ -1,0 +1,119 @@
+﻿@model Techhive.OrderModels.AdminOrderDetailViewModel
+@{
+    ViewData["Title"] = "Detial - Order";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Order Details</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a asp-action="Dashboard" asp-controller="Admin">
+                        <div class="text-tiny">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <i class="icon-chevron-right"></i>
+                </li>
+                <li>
+                    <div class="text-tiny">Order Items</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wg-box">
+            <div class="flex items-center justify-between gap10 flex-wrap">
+                <div class="wg-filter flex-grow">
+                    <h5>Ordered Items</h5>
+                </div>
+                <a class="tf-button style-1 w208" href="@Url.Action("adminOrderList", "Order")">Back</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Brand</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.OrderItems)
+                        {
+                            <tr>
+                                <td class="pname">
+                                    <div class="image">
+                                        <img src="@item.Products.Image1" alt="" class="image">
+                                    </div>
+                                    <div class="name">
+                                        <a href="#" target="_blank" class="body-title-2">@item.Products.Name</a>
+                                    </div>
+                                </td>
+                                <td class="text-center">@item.Price.ToString("C")</td>
+                                <td class="text-center">@item.Quantity</td>
+                                <td class="text-center">@item.Products.Brands.Name</td>
+                                <td class="text-center">
+                                    <div class="list-icon-function view-icon">
+                                        <div class="item eye">
+                                            <i class="icon-eye"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="divider"></div>
+        </div>
+
+        <div class="wg-box mt-5">
+            <h5>Shipping Address</h5>
+            <div class="my-account__address-item col-md-6">
+                <div class="my-account__address-item__detail">
+                    <p>@Model.Orders.FirstOrDefault()?.User.UserName</p>
+                    <p>@Model.Orders.FirstOrDefault()?.ShippingAddress</p>
+                    <br>
+                    <p>Mobile: @Model.Orders.FirstOrDefault()?.User.PhoneNumber "N/A"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wg-box mt-5">
+            <h5>Transactions</h5>
+            <table class="table table-striped table-bordered table-transaction">
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <td>MRS @Model.TotalAmount</td>
+                        <th>Payment Method</th>
+                        <td>@Model.Orders.FirstOrDefault()?.PaymentMethod</td>
+                         <th>Status</th>
+                         <td>
+                            <form method="post" asp-action="UpdateOrderStatus" asp-route-orderId="@Model.Orders.FirstOrDefault()?.OrderId">
+                            <select class="form-control" asp-for="Status" id="status">
+                                <option value="Pending">Pending</option>
+                                <option value="Processing">Processing</option>
+                                <option value="Complete">Complete</option>
+                            </select>
+                                <button type="submit" class="btn btn-primary btn-lg">Update Status</button>
+                            </form>
+                         </td>
+                    </tr>                  
+                    <tr>
+                        <th>Order Date</th>
+                        <td>@Model.Orders.FirstOrDefault()?.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <th>Delivered Date</th>
+                        <td>@Model.Orders.FirstOrDefault()?.DeliveredDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <th>Canceled Date</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

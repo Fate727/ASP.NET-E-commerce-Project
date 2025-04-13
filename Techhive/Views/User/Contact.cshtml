@@ -1,0 +1,59 @@
+﻿@model Techhive.Models.ContactMessage
+@{
+    ViewData["Title"] = "Contact section ";
+    Layout = "~/Views/Shared/_userlayout.cshtml";
+}
+
+<main class="pt-90">
+    <div class="mb-4 pb-4"></div>
+    <section class="contact-us container">
+        <div class="mw-930">
+            <h2 class="page-title">CONTACT US</h2>
+        </div>
+    </section>
+
+    <hr class="mt-2 text-secondary " />
+    <div class="mb-4 pb-4"></div>
+
+    <section class="contact-us container">
+        <div class="mw-930">
+            <div class="contact-us__form">
+            
+                <form asp-controller="User" asp-action="Contact" method="post" class="needs-validation" novalidate>
+                    <h3 class="mb-5">Get In Touch</h3>
+
+                    <div class="form-floating my-4">
+                        <input asp-for="Name" class="form-control" placeholder="Name *" required />
+                        <label for="Name">Name *</label>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating my-4">
+                        <input asp-for="Phone" class="form-control" placeholder="Phone *" required />
+                        <label for="Phone">Phone *</label>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating my-4">
+                        <input asp-for="Email" class="form-control" placeholder="Email address *" required />
+                        <label for="Email">Email address *</label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="my-4">
+                        <textarea asp-for="Comment" class="form-control form-control_gray" cols="30" rows="8" placeholder="Your Message *" required></textarea>
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+
+                    <div class="my-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

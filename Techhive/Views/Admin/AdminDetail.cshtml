@@ -1,0 +1,142 @@
+﻿@using Techhive.Models;
+@model UserUpdate;
+
+@{
+    ViewData["Title"] = "Admin Detail";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Admin Settings</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a asp-area="" asp-controller="Admin" asp-action="Dashboard">
+                        <div class="text-tiny">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <i class="icon-chevron-right"></i>
+                </li>
+                <li>
+                    <div class="text-tiny">Admin Settings</div>
+                </li>
+            </ul>
+        </div>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show fs-4" role="alert">
+                <strong>Error!</strong> @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <div class="wg-box">
+            <div class="col-lg-12">
+                <div class="page-content my-account__edit">
+                    
+                    <div class="my-account__edit-form">
+                        <form asp-action="UpdateAccountDetails" method="POST"
+                              class="form-new-product form-style-1 needs-validation"
+                              novalidate>
+
+                            <div asp-validation-summary="All" class="text-danger"></div>
+
+                            <fieldset class="name">
+                                <div class="body-title">Full Name <span class="tf-color-1">*</span></div>
+                                <input class="flex-grow" type="text" placeholder="Full Name"
+                                       asp-for="FullName" required aria-required="true">
+                                <span class="text-danger" asp-validation-for="FullName"></span>
+                            </fieldset>
+
+                            <fieldset class="name">
+                                <div class="body-title">Phone Number <span class="tf-color-1">*</span></div>
+                                <input class="flex-grow" type="text" placeholder="Phone Number"
+                                       asp-for="PhoneNumber" required aria-required="true">
+                                <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                            </fieldset>
+
+                            <fieldset class="name">
+                                <div class="body-title">Email Address <span class="tf-color-1">*</span></div>
+                                <input class="flex-grow" type="email" placeholder="Email Address"
+                                       asp-for="Email" required aria-required="true" />
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </fieldset>
+
+                            <fieldset class="name">
+                                <div class="body-title">Address <span class="tf-color-1">*</span></div>
+                                <input class="flex-grow" type="text" placeholder="Address"
+                                       asp-for="Address" required aria-required="true">
+                                <span class="text-danger" asp-validation-for="Address"></span>
+                            </fieldset>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="my-3">
+                                        <h5 class="text-uppercase mb-0">Password Change</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="name">
+                                        <div class="body-title pb-3">Old Password <span class="tf-color-1">*</span></div>
+                                        <input class="flex-grow" type="password" placeholder="Old password"
+                                               asp-for="OldPassword" required aria-required="true">
+                                        <span class="text-danger" asp-validation-for="OldPassword"></span>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="name">
+                                        <div class="body-title pb-3">New Password <span class="tf-color-1">*</span></div>
+                                        <input class="flex-grow" type="password" placeholder="New password"
+                                               asp-for="NewPassword" required aria-required="true">
+                                        <span class="text-danger" asp-validation-for="NewPassword"></span>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="name">
+                                        <div class="body-title pb-3">Confirm New Password <span class="tf-color-1">*</span></div>
+                                        <input class="flex-grow" type="password" placeholder="Confirm new password"
+                                               asp-for="ConfirmNewPassword" required aria-required="true">
+                                        <span class="text-danger" asp-validation-for="ConfirmNewPassword"></span>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="my-3">
+                                        <button type="submit" class="btn btn-primary tf-button w208">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Logout Option -->
+                        <div class="text-center mt-4">
+                            <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#logoutModal" id="logoutBtn">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="@Url.Action("Logout", "Admin")" class="btn btn-danger ">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

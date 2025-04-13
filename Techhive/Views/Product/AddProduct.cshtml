@@ -1,0 +1,151 @@
+﻿@model Techhive.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <!-- Success and Error Messages -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success fs-1">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <form asp-action="AddProduct" method="POST" enctype="multipart/form-data" class="tf-section-2 form-add-product">
+            @Html.AntiForgeryToken()
+
+            <!-- Product Fields -->
+            <div class="wg-box">
+                <fieldset class="name">
+                    <div class="body-title mb-10">Product Name <span class="tf-color-1">*</span></div>
+                    <input class="mb-10" type="text" placeholder="Enter product name" asp-for="Name" required />
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </fieldset>
+
+                <fieldset class="price">
+                    <div class="body-title mb-10">Product Price <span class="tf-color-1">*</span></div>
+                    <input class="mb-10" type="number" placeholder="Enter product price" asp-for="Price" step="0.01" required />
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </fieldset>
+
+                <!-- Brand Dropdown -->
+                <fieldset class="brand">
+                    <label asp-for="B_Id" class="body-title mb-10">Brands <span class="tf-color-1">*</span></label>
+                    <select class="mb-10 form-select" asp-items="@ViewBag.BrandList" asp-for="B_Id" required>
+                        <option disabled selected>-- Select Brand --</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="B_Id"></span>
+                </fieldset>
+
+                <fieldset class="description">
+                    <div class="body-title mb-10">Description <span class="tf-color-1">*</span></div>
+                    <textarea class="mb-10" asp-for="Detail" placeholder="Product description" required></textarea>
+                    <span class="text-danger" asp-validation-for="Detail"></span>
+                </fieldset>
+            </div>
+
+            <!-- Image Upload Fields -->
+            <div class="wg-box">
+                <!-- Image1 Upload Field -->
+                <fieldset>
+                    <div class="body-title">Upload Image 1 <span class="tf-color-1">*</span></div>
+                    <div class="upload-image flex-grow">
+                        <div class="item" id="imgpreview1" style="display:none">
+                            <img src="" class="effect8" alt="Preview Image 1" />
+                        </div>
+                        <div class="item up-load">
+                            <label class="uploadfile" for="Image1">
+                                <span class="icon"><i class="icon-upload-cloud"></i></span>
+                                <span class="body-text">Drop your image here or select <span class="tf-color">click to browse</span></span>
+                                <input type="file" id="Image1" asp-for="Image1" accept="image/*" required />
+                            </label>
+                        </div>
+                    </div>
+                    <span class="text-danger" asp-validation-for="Image1"></span>
+                </fieldset>
+
+                <!-- Image2 Upload Field -->
+                <fieldset>
+                    <div class="body-title">Upload Image 2</div>
+                    <div class="upload-image flex-grow">
+                        <div class="item" id="imgpreview2" style="display:none">
+                            <img src="" class="effect8" alt="Preview Image 2" />
+                        </div>
+                        <div class="item up-load">
+                            <label class="uploadfile" for="Image2">
+                                <span class="icon"><i class="icon-upload-cloud"></i></span>
+                                <span class="body-text">Drop your image here or select <span class="tf-color">click to browse</span></span>
+                                <input type="file" id="Image2" asp-for="Image2" accept="image/*" />
+                            </label>
+                        </div>
+                    </div>
+                    <span class="text-danger" asp-validation-for="Image2"></span>
+                </fieldset>
+
+                <!-- Image3 Upload Field -->
+                <fieldset>
+                    <div class="body-title">Upload Image 3</div>
+                    <div class="upload-image flex-grow">
+                        <div class="item" id="imgpreview3" style="display:none">
+                            <img src="" class="effect8" alt="Preview Image 3" />
+                        </div>
+                        <div class="item up-load">
+                            <label class="uploadfile" for="Image3">
+                                <span class="icon"><i class="icon-upload-cloud"></i></span>
+                                <span class="body-text">Drop your image here or select <span class="tf-color">click to browse</span></span>
+                                <input type="file" id="Image3" asp-for="Image3" accept="image/*" />
+                            </label>
+                        </div>
+                    </div>
+                    <span class="text-danger" asp-validation-for="Image3"></span>
+                </fieldset>
+            </div>
+
+            <div class="cols gap10">
+                <button class="tf-button w-full" type="submit" value="AddProduct">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @Html.Partial("_ValidationScriptsPartial")
+    <script>
+        // Preview image logic for Image1, Image2, and Image3
+        function previewImage(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            input.addEventListener("change", function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.style.display = 'block';
+                        preview.querySelector('img').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        previewImage("Image1", "imgpreview1");
+        previewImage("Image2", "imgpreview2");
+        previewImage("Image3", "imgpreview3");
+    </script>
+}

@@ -1,0 +1,19 @@
+﻿@model Techhive.Models.ContactMessage
+
+@{
+    ViewData["Title"] = "Feedback Details";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <h3 class="mb-4">Feedback Details</h3>
+        <div class="card p-4">
+            <p><strong>Name:</strong> @Model.Name</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Phone:</strong> @Model.Phone</p>
+            <p><strong>Message:</strong> @Model.Comment</p>
+            <p><strong>Submitted On:</strong> @Model.CreatedAt.ToString("yyyy-MM-dd hh:mm tt")</p>
+        </div>
+    </div>
+</div>

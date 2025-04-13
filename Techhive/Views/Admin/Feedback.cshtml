@@ -1,0 +1,109 @@
+﻿@model Techhive.Models.FeedbackListViewModel
+
+@{
+    ViewData["Title"] = "Feedback";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<div class="main-content-inner">
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Feedback</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a asp-controller="Admin" asp-action="Dashboard">
+                        <div class="text-tiny">Dashboard</div>
+                    </a>
+                </li>
+                <li><i class="icon-chevron-right"></i></li>
+                <li>
+                    <div class="text-tiny">Feedback</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wg-box">
+            @if (Model.Feedbacks != null && Model.Feedbacks.Any())
+            {
+                <div class="wg-table table-all-user">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int count = 1;
+                                }
+                                @foreach (var feedback in Model.Feedbacks)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@feedback.Name</td>
+                                        <td>@feedback.Email</td>
+                                        <td>@feedback.Phone</td>
+                                        <td>@feedback.Comment</td>
+                                        <td>
+                                            <div class="list-icon-function d-flex gap-2">
+                                                <a asp-controller="Admin" asp-action="ViewFeedback" asp-route-id="@feedback.Id" class="btn btn-info btn-lg">
+                                                    <i class="icon-eye"></i> See
+                                                </a>
+                                            </div>
+                                        </td>
+                                        
+                                    </tr>
+                                    count++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    @if (Model.TotalPages > 1)
+                    {
+                        <nav aria-label="Page navigation" class="mb-2">
+                            <ul class="pagination justify-content-center mb-2">
+                                @if (Model.CurrentPage > 1)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="@Url.Action("FeedbackList", new { page = Model.CurrentPage - 1 })" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                }
+
+                                @for (int i = 1; i <= Model.TotalPages; i++)
+                                {
+                                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("FeedbackList", new { page = i })">@i</a>
+                                    </li>
+                                }
+
+                                @if (Model.CurrentPage < Model.TotalPages)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="@Url.Action("FeedbackList", new { page = Model.CurrentPage + 1 })" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>No feedback entries found.</p>
+            }
+        </div>
+    </div>
+</div>

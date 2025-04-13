@@ -1,0 +1,253 @@
+﻿@{
+    ViewData["Title"] = "Prodcut Detail";
+    Layout = "~/Views/Shared/_userlayout.cshtml";
+}
+@model Techhive.HomeModel.RelatedProductViewModel
+
+<main class="pt-90">
+    <div class="mb-md-1 pb-md-3"></div>
+    <section class="product-single container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="product-single__media" data-media-type="vertical-thumbnail">
+                    <div class="product-single__image">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                @if (!string.IsNullOrEmpty(Model.Product.Image1))
+                                {
+                                    <div class="swiper-slide product-single__image-item">
+                                        <img loading="lazy" class="h-auto" src="@Url.Content("~"+Model.Product.Image1)" width="674"
+                                             height="674" alt="Product Image 1" />
+                                        <a data-fancybox="gallery" href="@Url.Content("~" + Model.Product.Image1)" data-bs-toggle="tooltip"
+                                           data-bs-placement="left" title="Zoom">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_zoom" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                }
+
+                                @if (!string.IsNullOrEmpty(Model.Product.Image2))
+                                {
+                                    <div class="swiper-slide product-single__image-item">
+                                        <img loading="lazy" class="h-auto" src="@Url.Content("~" + Model.Product.Image2)" width="674"
+                                             height="674" alt="Product Image 2" />
+                                        <a data-fancybox="gallery" href="@Url.Content("~" + Model.Product.Image2)" data-bs-toggle="tooltip"
+                                           data-bs-placement="left" title="Zoom">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_zoom" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                }
+
+                                @if (!string.IsNullOrEmpty(Model.Product.Image3))
+                                {
+                                    <div class="swiper-slide product-single__image-item">
+                                        <img loading="lazy" class="h-auto" src="@Url.Content("~" + Model.Product.Image3)" width="674"
+                                             height="674" alt="Product Image 3" />
+                                        <a data-fancybox="gallery" href="@Url.Content("~" + Model.Product.Image3)" data-bs-toggle="tooltip"
+                                           data-bs-placement="left" title="Zoom">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <use href="#icon_zoom" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+                            <div class="swiper-button-prev">
+                                <svg width="7" height="11" viewBox="0 0 7 11"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <use href="#icon_prev_sm" />
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg width="7" height="11" viewBox="0 0 7 11"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <use href="#icon_next_sm" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-single__thumbnail">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                             @foreach (var image in new[] { Model.Product.Image1, Model.Product.Image2, Model.Product.Image3 })
+                                {
+                                    <div class="swiper-slide product-single__image-item">
+                                        <img loading="lazy" class="h-auto"
+                                             src="@Url.Content($"~{image}")" width="104" height="104" alt="Product Image" />
+                                    </div>
+                              
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="d-flex justify-content-between mb-4 pb-md-2">
+                    <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
+                        <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                        <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
+                        <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                    </div><!-- /.breadcrumb -->
+
+                    <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
+                        <a href="#" class="text-uppercase fw-medium">
+                            <svg width="10" height="10" viewBox="0 0 25 25"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon_prev_md" />
+                            </svg><span class="menu-link menu-link_us-s">Prev</span>
+                        </a>
+                        <a href="#" class="text-uppercase fw-medium">
+                            <span class="menu-link menu-link_us-s">Next</span>
+                            <svg width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon_next_md" />
+                            </svg>
+                        </a>
+                    </div><!-- /.shop-acs -->
+                </div>
+                <h1 class="product-single__name">@Model.Product.Name</h1>
+                <div class="product-single__price">
+                    <span class="current-price">MRS. @Model.Product.Price</span>
+                </div>
+                <div class="product-single__short-desc">
+                    <p>
+                        @Model.Product.Detail
+                    </p>
+                </div>
+                <form method="post" asp-controller="Cart" asp-action="AddToCart">
+                    <input type="hidden" name="P_Id" value="@Model.Product.P_Id" /> <!-- Hidden product ID -->
+
+                    <div class="product-single__addtocart">
+                        <div class="qty-control position-relative">
+                            <input type="number" name="Quantity" value="1" min="1" class="qty-control__number text-center">
+                            <div class="qty-control__reduce">-</div>
+                            <div class="qty-control__increase">+</div>
+                        </div><!-- .qty-control -->
+
+                        <button type="submit" class="btn btn-primary btn-addtocart ">
+                            Add to Cart
+                        </button>
+                    </div>
+                </form>
+
+                <div class="product-single__addtolinks">
+                    <a href="#" class="menu-link menu-link_us-s add-to-wishlist">
+                        <svg width="16" height="16" viewBox="0 0 20 20"
+                             fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#icon_heart" />
+                        </svg><span>Add to Wishlist</span>
+                    </a>
+                    <script src="js/details-disclosure.html" defer="defer"></script>
+                    <script src="js/share.html" defer="defer"></script>
+                </div>
+                <div class="product-single__meta-info">       
+                    <div class="meta-item">
+                        <label>Brand:</label>
+                        <span>@Model.Product.Brands.Name</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="products-carousel container">
+        <h2 class="h3 text-uppercase mb-4 pb-xl-2 mb-xl-4">Related <strong>Products</strong></h2>
+
+        <div id="related_products" class="position-relative">
+            <div class="swiper-container js-swiper-slider" data-settings='{
+            "autoplay": false,
+            "slidesPerView": 4,
+            "slidesPerGroup": 4,
+            "effect": "none",
+            "loop": true,
+            "pagination": {
+              "el": "#related_products .products-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "navigation": {
+              "nextEl": "#related_products .products-carousel__next",
+              "prevEl": "#related_products .products-carousel__prev"
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 2,
+                "slidesPerGroup": 2,
+                "spaceBetween": 14
+              },
+              "768": {
+                "slidesPerView": 3,
+                "slidesPerGroup": 3,
+                "spaceBetween": 24
+              },
+              "992": {
+                "slidesPerView": 4,
+                "slidesPerGroup": 4,
+                "spaceBetween": 30
+              }
+            }
+          }'>
+                <div class="swiper-wrapper">
+                    @foreach (var product in Model.RelatedProducts)
+                    {
+                        <div class="swiper-slide product-card">
+                            <div class="pc__img-wrapper">
+                                <a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })">
+                                    <img loading="lazy" src="@product.Image1" width="330" height="400"
+                                         alt="@product.Name" class="pc__img">
+                                    <img loading="lazy" src="@product.Image2" width="330" height="400"
+                                         alt="@product.Name" class="pc__img pc__img-second">
+                                </a>
+                                <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"
+                                        data-aside="cartDrawer" title="Add To Cart">
+                                    Add To Cart
+                                </button>
+                            </div>
+
+                            <div class="pc__info position-relative">
+                                <p class="pc__category">@product.Brands.Name</p>
+                                <h6 class="pc__title">
+                                    <a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })">@product.Name</a>
+                                </h6>
+                                <div class="product-card__price d-flex">
+                                    <span class="money price">$@product.Price</span>
+                                </div>
+
+                                <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                                        title="Add To Wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#icon_heart" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    }
+            
+                </div><!-- /.swiper-wrapper -->
+            </div><!-- /.swiper-container js-swiper-slider -->
+
+            <div class="products-carousel__prev position-absolute top-50 d-flex align-items-center justify-content-center">
+                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                    <use href="#icon_prev_md" />
+                </svg>
+            </div><!-- /.products-carousel__prev -->
+            <div class="products-carousel__next position-absolute top-50 d-flex align-items-center justify-content-center">
+                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                    <use href="#icon_next_md" />
+                </svg>
+            </div><!-- /.products-carousel__next -->
+
+            <div class="products-pagination mt-4 mb-5 d-flex align-items-center justify-content-center"></div>
+            <!-- /.products-pagination -->
+        </div><!-- /.position-relative -->
+
+    </section><!-- /.products-carousel container -->
+</main>

@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "CheckOut section ";
+    Layout = "~/Views/Shared/_userlayout.cshtml";
+}
+@model Techhive.OrderModels.CheckoutViewModel
+
+<main class="pt-90">
+    <div class="mb-4 pb-4"></div>
+    <section class="shop-checkout container">
+        <h2 class="page-title">Shipping and Checkout</h2>
+        <div class="checkout-steps">
+            <a asp-action="Cart" asp-area="" asp-controller="User" class="checkout-steps__item active">
+                <span class="checkout-steps__item-number">01</span>
+                <span class="checkout-steps__item-title">
+                    <span>Shopping Bag</span>
+                    <em>Manage Your Items List</em>
+                </span>
+            </a>
+            <a asp-action="CheckOut" asp-area="" asp-controller="Order" class="checkout-steps__item active">
+                <span class="checkout-steps__item-number">02</span>
+                <span class="checkout-steps__item-title">
+                    <span>Shipping and Checkout</span>
+                    <em>Checkout Your Items List</em>
+                </span>
+            </a>
+            <a asp-action="OrderConfirmation" asp-area="" asp-controller="Order" class="checkout-steps__item">
+                <span class="checkout-steps__item-number">03</span>
+                <span class="checkout-steps__item-title">
+                    <span>Confirmation</span>
+                    <em>Review And Submit Your Order</em>
+                </span>
+            </a>
+        </div>
+
+        <form asp-action="Checkout" method="post">
+    <div class="checkout-form">
+        <div class="billing-info__wrapper">
+            <div class="row">
+                <div class="col-6">
+                    <h4>SHIPPING DETAILS</h4>
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="form-floating my-3">
+                        <input asp-for="FullName" class="form-control" />
+                        <label asp-for="FullName">Full Name *</label>
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating my-3">
+                        <input asp-for="Phone" class="form-control" />
+                        <label asp-for="Phone">Phone Number *</label>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating my-3">
+                        <input asp-for="Address" class="form-control" />
+                        <label asp-for="Address">House no, Building Name *</label>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout__totals-wrapper">
+            <div class="sticky-content">
+                <div class="checkout__totals">
+                    <h3>Your Order</h3>
+                    <table class="checkout-cart-items">
+                        <thead>
+                            <tr>
+                                <th>PRODUCT</th>
+                                <th class="text-end">SUBTOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <tr>
+                                    <td>@item.Product.Name x @item.Quantity</td>
+                                    <td class="text-end">MRS @String.Format("{0:0.00}", item.Product.Price * item.Quantity)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <table class="checkout-totals">
+                        <tbody>
+                            <tr>
+                                <th>SUBTOTAL</th>
+                                <td class="text-end">MRS @String.Format("{0:0.00}", Model.Subtotal)</td>
+                            </tr>
+                            <tr>
+                                <th>SHIPPING</th>
+                                <td class="text-end">Free shipping</td>
+                            </tr>
+                            <tr>
+                                <th>TOTAL</th>
+                                <td class="text-end">MRS @String.Format("{0:0.00}", Model.Total)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="checkout__payment-methods">
+                    <div class="form-check">
+                        <input class="form-check-input form-check-input_fill" type="radio" asp-for="PaymentMethod" value="CashOnDelivery" id="checkout_payment_method_3" />
+                        <label class="form-check-label" for="checkout_payment_method_3">
+                            Cash on delivery
+                            <p class="option-detail">
+                                Pay when the product arrives at your doorstep.
+                            </p>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input form-check-input_fill" type="radio" asp-for="PaymentMethod" value="Khalti" id="checkout_payment_method_4" />
+                        <label class="form-check-label" for="checkout_payment_method_4">
+                            Khalti
+                            <p class="option-detail">
+                                Make your payment online through Khalti.
+                            </p>
+                        </label>
+                    </div>
+                    <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+
+                    <div class="policy-text mt-3">
+                        Your personal data will be used to process your order, support your experience throughout this
+                        website, and for other purposes described in our <a href="terms.html" target="_blank">privacy policy</a>.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-checkout mt-4">PLACE ORDER</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+    </section>
+</main>

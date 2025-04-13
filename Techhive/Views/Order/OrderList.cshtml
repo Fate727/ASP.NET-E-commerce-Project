@@ -1,0 +1,123 @@
+﻿@model Techhive.OrderModels.OrderListViewModel
+
+@{
+    ViewData["Title"] = "Order List";
+    Layout = "~/Views/Shared/_userlayout.cshtml";
+}
+
+<main class="pt-90">
+    <div class="mb-4 pb-4"></div>
+    <div class="mb-4 pb-4"></div>
+    <section class="my-account container">
+        <h2 class="page-title">Orders</h2>
+        <div class="row">
+            <div class="col-lg-2">
+                <ul class="account-nav">
+                    <li><a href="@Url.Action("Account_Detail", "Account")" class="menu-link menu-link_us-s">Dashboard</a></li>
+                    <li><a href="@Url.Action("OrderList", "Order")" class="menu-link menu-link_us-s">Orders</a></li>
+                    <li><a href="@Url.Action("Account_Detail", "Account")" class="menu-link menu-link_us-s menu-link_active">Account Details</a></li>
+                    <li>
+                        <a href="@Url.Action("Logout", "Account")" class="menu-link menu-link_us-s text-danger">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+     
+        <div class="col-lg-10">
+        <div class="wg-table table-all-user">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px">OrderNo</th>
+                            <th>Name</th>
+                            <th class="text-center">Phone</th>
+                            <th class="text-center">Subtotal</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Order Date</th>
+                            <th class="text-center">Order Method</th>
+                            <th class="text-center">Items</th>
+                            <th class="text-center">Delivered On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model.Orders)
+                        {
+                            <tr>
+                                <td class="text-center">@order.OrderId</td>
+                                <td class="text-center">@order.User.FullName</td>
+                                <td class="text-center">@order.User.PhoneNumber</td>
+                                <td class="text-center">@order.OrderItems.Sum(item => item.Total).ToString("C")</td>
+                                <td class="text-center">@order.TotalAmount.ToString("C")</td>
+                                <td class="text-center">
+                                    <span class="badge bg-@(order.Status == "Canceled" ? "danger" : "warning")" style="color: black;">@order.Status</span>
+                                </td>
+                                <td class="text-center">@order.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                <td class="text-center">@order.PaymentMethod</td>
+                                <td class="text-center">@order.OrderItems.Count</td>
+                                <td class="text-center">
+                                    <a href="@Url.Action("OrderDetail", "Order", new { orderId = order.OrderId })">
+                                        <div class="list-icon-function view-icon">
+                                            <div class="item eye">
+                                                <i class="fa fa-eye"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Pagination Controls -->
+        <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+            <ul class="pagination">
+                <!-- Previous Page Button -->
+                @if (Model.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("OrderList", "Order", new { page = Model.CurrentPage - 1 })">&laquo; Previous</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo; Previous</span>
+                    </li>
+                }
+
+                <!-- Page Number Links -->
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("OrderList", "Order", new { page = i })">@i</a>
+                    </li>
+                }
+
+                <!-- Next Page Button -->
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("OrderList", "Order", new { page = Model.CurrentPage + 1 })">Next &raquo;</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">Next &raquo;</span>
+                    </li>
+                }
+            </ul>
+            </div>
+            </div>
+        
+        </div>
+    </section>
+</main>
