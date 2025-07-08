@@ -255,7 +255,7 @@
                                                 <a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })">@product.Name</a>
                                             </h6>
                                             <div class="product-card__price d-flex">
-                                                <span class="money price text-secondary">MRP.{@product.Price}</span>
+                                                <span class="money price text-secondary">Rs.@product.Price</span>
                                             </div>
 
                                             <div class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
@@ -275,11 +275,7 @@
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <use href="#icon_heart" />
-                                                    </svg>
-                                                </button>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -339,7 +335,7 @@
                                     <a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })">@product.Name</a>
                                 </h6>
                                 <div class="product-card__price d-flex align-items-center">
-                                    <span class="money price text-secondary">MRP. @product.Price</span>
+                                    <span class="money price text-secondary">Rs. @product.Price</span>
                                 </div>
 
                                 <div class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
@@ -353,21 +349,15 @@
                                         </button>
                                     </form>
 
-                                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                                            data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
+                                    <a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })" class="btn-link btn-link_lg me-4 text-uppercase fw-medium "
+                                           title="Quick view">
                                         <span class="d-none d-xxl-block">Quick View</span>
                                         <span class="d-block d-xxl-none">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <use href="#icon_view" />
                                             </svg>
                                         </span>
-                                    </button>
-
-                                    <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <use href="#icon_heart" />
-                                        </svg>
-                                    </button>
+                                    </a>
 
                                 </div>
                             </div>

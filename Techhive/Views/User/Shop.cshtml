@@ -79,11 +79,11 @@
                             <div class="price-range__info d-flex align-items-center mt-2">
                                 <div class="me-auto">
                                     <span class="text-secondary">Min Price: </span>
-                                    <span class="price-range__min">MRP @Model.MinPrice</span>
+                                    <span class="price-range__min">Rs. @Model.MinPrice</span>
                                 </div>
                                 <div>
                                     <span class="text-secondary">Max Price: </span>
-                                    <span class="price-range__max">MRP @Model.MaxPrice</span>
+                                    <span class="price-range__max">Rs. @Model.MaxPrice</span>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                 <p class="pc__category">@product.Brands.Name</p> <!-- Display brand name -->
                                 <h6 class="pc__title"><a href="@Url.Action("ProductDetails", "User", new { id = product.P_Id })">@product.Name</a></h6>
                 <div class="product-card__price d-flex">
-                    <span class="money price">MRP @product.Price </span> <!-- Display product price -->
+                    <span class="money price">Rs. @product.Price </span> <!-- Display product price -->
                 </div>
                 </div>
 

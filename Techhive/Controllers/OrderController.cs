@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Techhive.Data; // Replace with your actual DbContext namespace
+using Techhive.Data; 
 using Techhive.Models;
 using Techhive.ProductModels;
 using Techhive.OrderModels;
+using Techhive.TrendingModel;
+using System.Net.Http.Headers;
+using System.Text;
+using Newtonsoft.Json;
+using System.Numerics;
 
 namespace Techhive.Controllers
 {
@@ -53,12 +58,13 @@ namespace Techhive.Controllers
 
             return View(model);
         }
+
         // ==============================
         //       Checkout order SECTION
         // ==============================
 
         [HttpPost]
-        public IActionResult Checkout(CheckoutViewModel model)
+        public async Task<IActionResult> Checkout(CheckoutViewModel model)
         {
             var userId = _userManager.GetUserId(User);
 
@@ -72,45 +78,117 @@ namespace Techhive.Controllers
                 .Include(c => c.Product)
                 .ToList();
 
-            decimal subtotal = cartItems.Sum(c => c.Product.Price * c.Quantity);
-            decimal total = subtotal;
-
-            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
-
-            // Create a new order
-            var order = new Order
+            if (!cartItems.Any())
             {
-                UserId = userId,
-                TotalAmount = total,
-                ShippingAddress = $"{model.Address}",
-                PaymentMethod = model.PaymentMethod,
-                OrderDate = DateTime.Now,
-                Status = "Pending"
-            };
-
-            _context.Orders.Add(order);
-            _context.SaveChanges();
-
-            // Add order items
-            foreach (var cartItem in cartItems)
-            {
-                var orderItem = new OrderItem
-                {
-                    OrderId = order.OrderId,  // Link the order
-                    P_Id = cartItem.P_Id,     // Product ID
-                    Quantity = cartItem.Quantity,
-                    Price = cartItem.Product.Price
-                };
-                _context.OrderItems.Add(orderItem);
+                TempData["Error"] = "Your cart is empty.";
+                return RedirectToAction("Cart", "Shop");
             }
 
-            _context.SaveChanges();
+            decimal total = cartItems.Sum(c => c.Product.Price * c.Quantity);
+            var user = await _userManager.FindByIdAsync(userId);
 
-            _context.Carts.RemoveRange(cartItems);
-            _context.SaveChanges();
+            // Update user address and phone if provided in checkout
+            bool userUpdated = false;
 
-            return RedirectToAction("OrderConfirmation", new { orderId = order.OrderId });
+            if (!string.IsNullOrWhiteSpace(model.Address))
+            {
+                user.Address = model.Address;  // Assuming your custom user class has Address property
+                userUpdated = true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.Phone))
+            {
+                user.PhoneNumber = model.Phone;  // IdentityUser has PhoneNumber property
+                userUpdated = true;
+            }
+
+            if (userUpdated)
+            {
+                var updateResult = await _userManager.UpdateAsync(user);
+                if (!updateResult.Succeeded)
+                {
+                    TempData["Error"] = "Failed to update user information.";
+                    return RedirectToAction("Checkout");
+                }
+            }
+
+            if (model.PaymentMethod == "Khalti")
+            {
+                var url = "https://dev.khalti.com/api/v2/epayment/initiate/";
+
+                var payload = new
+                {
+                    return_url = "https://localhost:7239/order/khalti-success",
+                    website_url = "https://localhost:7239/",
+                    amount = (int)(total * 100),  // amount in paisa
+                    purchase_order_id = Guid.NewGuid().ToString(),
+                    purchase_order_name = "TechHive Order",
+                    customer_info = new
+                    {
+                        name = string.IsNullOrWhiteSpace(model.FullName) ? user?.UserName : model.FullName,
+                        email = string.IsNullOrWhiteSpace(user.Email) ? user?.Email : user.Email,
+                        phone = string.IsNullOrWhiteSpace(model.Phone) ? "0000000000" : model.Phone
+                    }
+                };
+
+                var jsonPayload = JsonConvert.SerializeObject(payload);
+                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Authorization", "key live_secret_key_68791341fdd94846a146f0457ff7b455"); // Your Khalti live secret key here
+
+                var response = await client.PostAsync(url, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent);
+                    return Redirect((string)jsonResponse.payment_url);
+                }
+                else
+                {
+                    TempData["Error"] = "Failed to initiate Khalti payment.";
+                    return RedirectToAction("Checkout", "Order");
+                }
+            }
+            else if (model.PaymentMethod == "CashOnDelivery")
+            {
+                var order = new Order
+                {
+                    UserId = userId,
+                    TotalAmount = total,
+                    ShippingAddress = model.Address,
+                    PaymentMethod = model.PaymentMethod,
+                    OrderDate = DateTime.Now,
+                    Status = "Pending"
+                };
+
+                _context.Orders.Add(order);
+                await _context.SaveChangesAsync();
+
+                foreach (var item in cartItems)
+                {
+                    _context.OrderItems.Add(new OrderItem
+                    {
+                        OrderId = order.OrderId,
+                        P_Id = item.P_Id,
+                        Quantity = item.Quantity,
+                        Price = item.Product.Price
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+                _context.Carts.RemoveRange(cartItems);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("OrderConfirmation", new { orderId = order.OrderId });
+            }
+
+            TempData["Error"] = "Invalid payment method.";
+            return RedirectToAction("Checkout");
         }
+
+
 
         // ==============================
         //      Order Confrim SECTION
@@ -136,6 +214,7 @@ namespace Techhive.Controllers
 
             return View(order);
         }
+
 
 
         // ==============================
@@ -179,11 +258,13 @@ namespace Techhive.Controllers
         }
 
 
+
         // ==============================
         //    User Order Detial SECTION
         // ==============================
 
         [HttpGet]
+        [Route("Order/OrderDetail/{orderId}")]
         public IActionResult OrderDetail(int orderId)
         {
             var userId = _userManager.GetUserId(User);
@@ -222,6 +303,57 @@ namespace Techhive.Controllers
 
             return View(orderDetailModel);
         }
+
+
+
+        // ==============================
+        //  User cancel Order req SECTION
+        // ==============================
+
+        [HttpPost]
+        public async Task<IActionResult> RequestCancel(int orderId)
+        {
+            var order = await _context.Orders.FindAsync(orderId);
+
+            if (order == null)
+            {
+                TempData["SuccessMessage"] = "Order not found.";
+                return RedirectToAction("MyOrders");
+            }
+
+            if (order == null || (order.Status != "Processing" && order.Status != "Pending"))
+            {
+                TempData["SuccessMessage"] = "You can only cancel orders that are Processing or Pending.";
+                return RedirectToAction("MyOrders");
+            }
+
+            if (order.Status == "Pending")
+            {
+                order.Status = "Cancelled";
+                TempData["SuccessMessage"] = "Your order has been cancelled successfully.";
+            }
+            else if (order.Status == "Processing")
+            {
+                if (!order.CancelRequested)
+                {
+                    order.CancelRequested = true;
+                    TempData["SuccessMessage"] = "Your cancel request has been submitted.";
+                }
+                else
+                {
+                    TempData["SuccessMessage"] = "You have already requested to cancel this order.";
+                }
+            }
+            else
+            {
+                TempData["SuccessMessage"] = "You can only cancel orders that are Pending or Processing.";
+            }
+
+            _context.Update(order);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("OrderDetail", "Order", new { id = orderId });
+        }
+
 
         // ==============================
         //    Admin Order List
@@ -266,6 +398,7 @@ namespace Techhive.Controllers
         }
 
 
+
         // ==============================
         //    Admin Order Detial
         // ==============================
@@ -307,6 +440,9 @@ namespace Techhive.Controllers
             return View(orderDetailViewModel);
         }
 
+        // ==============================
+        //    Admin Order Update
+        // ==============================
 
         [HttpPost]
         public IActionResult UpdateOrderStatus(int orderId, string status)
@@ -315,13 +451,120 @@ namespace Techhive.Controllers
 
             if (order != null)
             {
-                TempData["SuccessMessage"] = "Succesfully Update the Order!";
-                // Update the order status
+                if (status == "Complete")
+                {
+                    order.DeliveredDate = DateTime.Now;
+
+                    var orderItems = _context.OrderItems
+                        .Where(oi => oi.OrderId == orderId)
+                        .ToList();
+
+                    foreach (var item in orderItems)
+                    {
+                        var trending = _context.Trendings.FirstOrDefault(t => t.P_Id == item.P_Id);
+                        if (trending != null)
+                        {
+                            trending.OrderCount += 1;
+                        }
+                        else
+                        {
+                            _context.Trendings.Add(new Trending
+                            {
+                                P_Id = item.P_Id,
+                                OrderCount = 1,
+                                TotalViews = 0,
+                                TrendingScore = 0
+                            });
+                        }
+                    }
+                }
+
                 order.Status = status;
+                TempData["SuccessMessage"] = "Successfully updated the order!";
                 _context.SaveChanges();
             }
 
             return RedirectToAction("adminOrderDetail", new { id = orderId });
+        }
+
+
+        // ==============================
+        //    Admin cancel Order Deital
+        // =============================
+        [HttpPost]
+        public async Task<IActionResult> AdminCancelOrder(int orderId)
+        {
+            var order = await _context.Orders.FindAsync(orderId);
+            if (order == null) return NotFound();
+
+            order.Status = "Cancelled";
+            order.CancelRequested = false; 
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Successfully Cancelled the order!";
+            return RedirectToAction("adminOrderDetail", new { id = orderId });
+        }
+
+        [Route("order/khalti-success")]
+        [HttpGet]
+        public async Task<IActionResult> KhaltiSuccess(
+        string purchase_order_id,
+        string status,
+        long total_amount,  // amount is usually in paisa (int or long)
+        string mobile,
+        string address = null) // address might come from elsewhere (e.g. session or user input)
+        {
+            if (status != "Completed")
+            {
+                TempData["Error"] = "Payment not completed.";
+                return RedirectToAction("Cart", "Shop");
+            }
+
+            var userId = _userManager.GetUserId(User);
+            var user = await _userManager.FindByIdAsync(userId);
+
+            var cartItems = _context.Carts
+                .Where(c => c.UserId == userId)
+                .Include(c => c.Product)
+                .ToList();
+
+            if (!cartItems.Any())
+            {
+                TempData["Error"] = "Your cart is empty.";
+                return RedirectToAction("Cart", "Shop");
+            }
+
+            decimal totalInRupees = total_amount / 100m; 
+
+            var order = new Order
+            {
+                UserId = userId,
+                TotalAmount = totalInRupees,
+                ShippingAddress = user?.Address,
+                PaymentMethod = "Khalti",
+                OrderDate = DateTime.Now,
+                Status = "Pending"
+ 
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            foreach (var item in cartItems)
+            {
+                _context.OrderItems.Add(new OrderItem
+                {
+                    OrderId = order.OrderId,
+                    P_Id = item.P_Id,
+                    Quantity = item.Quantity,
+                    Price = item.Product.Price
+                });
+            }
+
+            await _context.SaveChangesAsync();
+            _context.Carts.RemoveRange(cartItems);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("OrderConfirmation", new { orderId = order.OrderId });
         }
 
     }

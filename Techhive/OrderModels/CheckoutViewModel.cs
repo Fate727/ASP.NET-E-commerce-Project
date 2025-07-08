@@ -6,8 +6,10 @@ namespace Techhive.OrderModels
 
     public class CheckoutViewModel
     {
+
         [Required(ErrorMessage = "Full Name is required.")]
         public string FullName { get; set; }
+        [Required(ErrorMessage = "Phone Number is required.")]
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "Address is required.")]

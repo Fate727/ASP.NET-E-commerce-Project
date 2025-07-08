@@ -58,7 +58,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="shopping-cart__product-price">MRP. @item.Product.Price</span>
+                                    <span class="shopping-cart__product-price">Rs. @item.Product.Price</span>
                                 </td>
                                 <td>
                                     <div class="qty-control position-relative">
@@ -69,7 +69,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="shopping-cart__subtotal">MRP. @(item.Product.Price * item.Quantity)</span>
+                                    <span class="shopping-cart__subtotal">Rs. @(item.Product.Price * item.Quantity)</span>
                                 </td>
                                 <td>
                                     <button onclick="removeItem(@item.Product.P_Id)" class="remove-cart">
@@ -95,18 +95,18 @@
                             <tbody>
                                 <tr>
                                     <th>Subtotal</th>
-                                    <td>$@Model.TotalPrice</td>
+                                    <td>Rs. @Model.TotalPrice</td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <div>
-                                            <a href="#" class="menu-link menu-link_us-s">CHANGE ADDRESS</a>
+                                            <a href="@((User.Identity.IsAuthenticated) ? Url.Action("Account_Detail", "Account") : Url.Action("Login", "Account"))" class="menu-link menu-link_us-s">CHANGE ADDRESS</a>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Total</th>
-                                    <td>MRP.@Model.TotalPrice</td>
+                                    <td>Rs.@Model.TotalPrice</td>
                                 </tr>
                             </tbody>
                         </table>

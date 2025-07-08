@@ -13,9 +13,9 @@
         <div class="row">
             <div class="col-lg-2">
                 <ul class="account-nav">
-                    <li><a href="@Url.Action("Account_Detail", "Account")" class="menu-link menu-link_us-s">Dashboard</a></li>
-                    <li><a href="@Url.Action("OrderList", "Order")" class="menu-link menu-link_us-s">Orders</a></li>
-                    <li><a href="@Url.Action("Account_Detail", "Account")" class="menu-link menu-link_us-s menu-link_active">Account Details</a></li>
+                    
+                    <li><a href="@Url.Action("OrderList", "Order")" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
+                    <li><a href="@Url.Action("Account_Detail", "Account")" class="menu-link menu-link_us-s">Account Detial</a></li>
                     <li>
                         <a href="@Url.Action("Logout", "Account")" class="menu-link menu-link_us-s text-danger">
                             Logout
@@ -40,7 +40,7 @@
                             <th class="text-center">Order Method</th>
                             <th class="text-center">Items</th>
                             <th class="text-center">Delivered On</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,14 +50,25 @@
                                 <td class="text-center">@order.OrderId</td>
                                 <td class="text-center">@order.User.FullName</td>
                                 <td class="text-center">@order.User.PhoneNumber</td>
-                                <td class="text-center">@order.OrderItems.Sum(item => item.Total).ToString("C")</td>
-                                <td class="text-center">@order.TotalAmount.ToString("C")</td>
+                                <td class="text-center">MRS. @order.OrderItems.Sum(item => item.Total)</td>
+                                <td class="text-center">MRS. @order.TotalAmount</td>
                                 <td class="text-center">
                                     <span class="badge bg-@(order.Status == "Canceled" ? "danger" : "warning")" style="color: black;">@order.Status</span>
                                 </td>
                                 <td class="text-center">@order.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
                                 <td class="text-center">@order.PaymentMethod</td>
                                 <td class="text-center">@order.OrderItems.Count</td>
+                                 <td class="text-center">
+                                     @if (order.DeliveredDate != DateTime.MinValue)
+                                     {
+                                         @order.DeliveredDate.ToString("yyyy-MM-dd HH:mm:ss")
+                                     }
+                                     else
+                                     {
+                                         <span class="text-danger">Not Delivered</span>
+                                     }
+                                 </td>
+
                                 <td class="text-center">
                                     <a href="@Url.Action("OrderDetail", "Order", new { orderId = order.OrderId })">
                                         <div class="list-icon-function view-icon">

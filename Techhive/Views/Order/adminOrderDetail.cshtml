@@ -52,7 +52,7 @@
                                         <a href="#" target="_blank" class="body-title-2">@item.Products.Name</a>
                                     </div>
                                 </td>
-                                <td class="text-center">@item.Price.ToString("C")</td>
+                                <td class="text-center">Rs.@item.Price</td>
                                 <td class="text-center">@item.Quantity</td>
                                 <td class="text-center">@item.Products.Brands.Name</td>
                                 <td class="text-center">
@@ -92,25 +92,53 @@
                         <td>MRS @Model.TotalAmount</td>
                         <th>Payment Method</th>
                         <td>@Model.Orders.FirstOrDefault()?.PaymentMethod</td>
-                         <th>Status</th>
-                         <td>
-                            <form method="post" asp-action="UpdateOrderStatus" asp-route-orderId="@Model.Orders.FirstOrDefault()?.OrderId">
-                            <select class="form-control" asp-for="Status" id="status">
-                                <option value="Pending">Pending</option>
-                                <option value="Processing">Processing</option>
-                                <option value="Complete">Complete</option>
-                            </select>
-                                <button type="submit" class="btn btn-primary btn-lg">Update Status</button>
-                            </form>
-                         </td>
+                        <th>Status</th>
+                        @if (Model.Orders != null && Model.Orders.FirstOrDefault()?.Status != "Cancelled")
+                        {
+                            <td>
+                                <form method="post" asp-action="UpdateOrderStatus" asp-route-orderId="@Model.Orders.FirstOrDefault()?.OrderId">
+                                    <select class="form-control" asp-for="Status" id="status">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Processing">Processing</option>
+                                        <option value="Complete">Complete</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary btn-lg">Update Status</button>
+                                </form>
+                            </td>
+                        }
+                        else
+                        {
+                            <td> @Model.Orders.FirstOrDefault()?.Status </td>
+                        }
+                        
                     </tr>                  
                     <tr>
                         <th>Order Date</th>
                         <td>@Model.Orders.FirstOrDefault()?.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
                         <th>Delivered Date</th>
-                        <td>@Model.Orders.FirstOrDefault()?.DeliveredDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                        <th>Canceled Date</th>
-                        <td></td>
+                        <td>
+                            @if (Model.Orders.FirstOrDefault()?.DeliveredDate != null && Model.Orders.FirstOrDefault()?.DeliveredDate!= DateTime.MinValue)
+                            {
+                                @Model.Orders.FirstOrDefault()?.DeliveredDate.ToString("yyyy-MM-dd HH:mm:ss")
+                            }
+                            else
+                            {
+                                <span>Not Delivered</span>
+                            }
+                        </td>
+                        <th>Cancael Request</th>
+                        <td>
+                            @if (Model.Orders.FirstOrDefault().CancelRequested)
+                            {
+                                <form method="post" asp-action="AdminCancelOrder" asp-route-orderId="@Model.Orders.FirstOrDefault()?.OrderId">
+                                    <button type="submit" class="btn btn-danger btn-sm">Cancel Order</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span>None</span>
+                            }
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -213,6 +213,7 @@ wwwroot\images\brands\11746dc6-02e3-4f87-9e3a-505abc7de19e.png
 wwwroot\images\brands\2308ccb7-48ab-4046-b6f3-4d12958aadd8.png
 wwwroot\images\brands\32aaf564-ca11-4c74-9301-f1fe09b778b9.png
 wwwroot\images\brands\3d415efe-f433-43cf-a8a7-9e2a203f67b4.png
+wwwroot\images\brands\431d6bdc-361c-491f-bd47-b2ba5d604503.png
 wwwroot\images\brands\443274bf-3fb4-4ed0-9824-7f7f0d525a9c.png
 wwwroot\images\brands\5674c50f-8df9-428c-bad4-4590283e2551.png
 wwwroot\images\brands\57a21917-255a-4463-968e-edecc443eb7a.png

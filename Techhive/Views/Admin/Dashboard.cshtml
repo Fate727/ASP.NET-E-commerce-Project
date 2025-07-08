@@ -1,4 +1,4 @@
-﻿
+﻿@model Techhive.Models.OrderStatusSummaryViewModel
 @{
     ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_adminlayout.cshtml";
@@ -18,7 +18,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Total Orders</div>
-                                        <h4>3</h4>
+                                    <h4>@Model.TotalOrderCount</h4>
                                     </div>
                                 </div>
                             </div>           
@@ -33,7 +33,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Total Amount</div>
-                                        <h4>481.34</h4>
+                                        <h4>@Model.TotalOrderAmount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Pending Orders</div>
-                                        <h4>3</h4>
+                                        <h4>@Model.PendingOrderCount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Pending Orders Amount</div>
-                                        <h4>481.34</h4>
+                                        <h4>@Model.PendingOrderAmount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Delivered Orders</div>
-                                        <h4>0</h4>
+                                        <h4>@Model.CompleteOrderCount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Delivered Orders Amount</div>
-                                        <h4>0.00</h4>
+                                        <h4>@Model.CompleteOrderAmount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Canceled Orders</div>
-                                        <h4>0</h4>
+                                    <h4>@Model.CancelOrderCount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Canceled Orders Amount</div>
-                                        <h4>0.00</h4>
+                                    <h4>@Model.CancelOrderAmount</h4>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
-                                <h4>MRS 37,802</h4>
+                                <h4>Rs. 37,802</h4>
                                 <div class="box-icon-trending up">
                                     <i class="icon-trending-up"></i>
                                     <div class="body-title number">0.56%</div>
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap10">
-                                <h4>MRS 28,305</h4>
+                                <h4>Rs. 28,305</h4>
                                 <div class="box-icon-trending up">
                                     <i class="icon-trending-up"></i>
                                     <div class="body-title number">0.56%</div>

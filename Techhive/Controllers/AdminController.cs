@@ -13,6 +13,9 @@ using System;
 using System.Data;
 using Microsoft.AspNetCore.Authorization;
 using Techhive.TrendingModel;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Techhive.Controllers
 {
@@ -43,10 +46,31 @@ namespace Techhive.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                return View();
+
+                var orders = _context.Orders.ToList();
+
+                var viewModel = new OrderStatusSummaryViewModel
+                {
+                    TotalOrderCount = orders.Count,
+                    TotalOrderAmount = orders.Sum(o => o.TotalAmount),
+
+                    CompleteOrderCount = orders.Count(o => o.Status == "Complete"),
+                    CompleteOrderAmount = orders.Where(o => o.Status == "Complete").Sum(o => o.TotalAmount),
+
+                    PendingOrderCount = orders.Count(o => o.Status == "Pending"),
+                    PendingOrderAmount = orders.Where(o => o.Status == "Pending").Sum(o => o.TotalAmount),
+
+                    CancelOrderCount = orders.Count(o => o.Status == "Cancelled"),
+                    CancelOrderAmount = orders.Where(o => o.Status == "Cancelled").Sum(o => o.TotalAmount)
+                };
+
+                return View(viewModel);
             }
+
             return RedirectToAction("Login", "Account");
         }
+
+
 
         // ==============================
         //           BRAND SECTION
@@ -217,6 +241,8 @@ namespace Techhive.Controllers
             }
         }
 
+
+
         // ==============================
         //       USER LOGOUT
         // ==============================
@@ -225,6 +251,7 @@ namespace Techhive.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "User");
         }
+
 
 
         // ==============================
@@ -314,6 +341,7 @@ namespace Techhive.Controllers
         }
 
 
+
         // ==============================
         //       ADMIN FeedBack
         // ==============================
@@ -349,6 +377,7 @@ namespace Techhive.Controllers
 
             return View(feedback);
         }
+
         // ==============================
         //       Trending FeedBack
         // ==============================
@@ -395,6 +424,7 @@ namespace Techhive.Controllers
 
             return View(model);
         }
+
 
         // ==============================
         //       Trending Detial
@@ -443,6 +473,81 @@ namespace Techhive.Controllers
 
             return View(model);
         }
+
+
+
+        // ==============================
+        //      User LIST SECTION
+        // ==============================
+        public async Task<IActionResult> UserList(int page = 1, string search = "")
+        {
+            int pageSize = 10;
+
+            var usersQuery = _context.Users.AsQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                usersQuery = usersQuery.Where(u => u.UserName.Contains(search));
+            }
+
+            var totalUsers = await usersQuery.CountAsync();
+            int totalPages = (int)Math.Ceiling((double)totalUsers / pageSize);
+
+            var users = await usersQuery
+                .OrderBy(u => u.UserName)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var userIds = users.Select(u => u.Id).ToList();
+
+            var recommendationViews = await _context.Recommendations
+                .Where(r => userIds.Contains(r.UserID))
+                .GroupBy(r => r.UserID)
+                .Select(g => new
+                {
+                    UserId = g.Key,
+                    TotalViews = g.Sum(r => r.V_Count)
+                })
+                .ToListAsync();
+
+            // Get current logged-in user ID
+            var currentUserId = _userManager.GetUserId(User);
+
+            // Get roles for users in batch
+            var isAdminDict = new Dictionary<string, bool>();
+            foreach (var user in users)
+            {
+                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                isAdminDict[user.Id] = isAdmin;
+            }
+
+            var paginatedUsers = users.Select(u => new UserVcountViewModel
+            {
+                UserId = u.Id,
+                UserName = u.UserName,
+                Email = u.Email,
+                TotalViews = recommendationViews.FirstOrDefault(r => r.UserId == u.Id)?.TotalViews ?? 0,
+                IsAdmin = isAdminDict.ContainsKey(u.Id) && isAdminDict[u.Id],
+                IsCurrentUser = (u.Id == currentUserId),
+                CurrentPage = page,
+                TotalPages = totalPages,
+                SearchQuery = search
+            }).ToList();
+
+            return View(paginatedUsers);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUserView(string id)
+        {
+            var views = _context.Users.Where(x => x.Id == id);
+            _context.Users.RemoveRange(views);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Account details Deleted successfully!";
+            return RedirectToAction("UserList"); // or your list action
+        }
+
 
     }
 }

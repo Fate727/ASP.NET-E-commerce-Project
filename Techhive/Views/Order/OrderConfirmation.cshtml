@@ -54,7 +54,7 @@
                 </div>
                 <div class="order-info__item">
                     <label>Total</label>
-                    <span>@("MRS " + Model.TotalAmount.ToString("F2"))</span>
+                    <span>@("Rs. " + Model.TotalAmount.ToString("F2"))</span>
                 </div>
                 <div class="order-info__item">
                     <label>Payment Method</label>
@@ -77,7 +77,7 @@
                             {
                                 <tr>
                                     <td>@item.Products.Name x @item.Quantity</td>
-                                    <td>@("MRS " + item.Total.ToString("F2"))</td>
+                                    <td>@("Rs. " + item.Total.ToString("F2"))</td>
                                 </tr>
                             }
                         </tbody>
@@ -87,7 +87,7 @@
                         <tbody>
                             <tr>
                                 <th>SUBTOTAL</th>
-                                <td>@("MRS " + Model.OrderItems.Sum(item => item.Total).ToString("F2"))</td>
+                                <td>@("Rs. " + Model.OrderItems.Sum(item => item.Total).ToString("F2"))</td>
                             </tr>
                             <tr>
                                 <th>SHIPPING</th>
@@ -95,7 +95,7 @@
                             </tr>
                             <tr>
                                 <th>TOTAL</th>
-                                <td>@("MRS " + Model.TotalAmount.ToString("F2"))</td>
+                                <td>@("Rs. " + Model.TotalAmount.ToString("F2"))</td>
                             </tr>
                         </tbody>
                     </table>

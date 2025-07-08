@@ -212,6 +212,10 @@ namespace Techhive.Controllers
             // Get the userId from the currently authenticated user
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // This fetches the UserId (GUID or string ident   ifier)
 
+            if (!User.Identity.IsAuthenticated)
+            {  
+                return RedirectToAction("Login","Account");
+            }
             // Retrieve cart items for the current user based on the UserId
             var cartItems = _db.Carts
                                 .Where(c => c.UserId == userId)  // Use userId here to match the correct user

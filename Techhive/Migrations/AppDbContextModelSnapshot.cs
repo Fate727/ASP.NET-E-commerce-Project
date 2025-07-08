@@ -339,6 +339,9 @@ namespace Techhive.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
+                    b.Property<bool>("CancelRequested")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("DeliveredDate")
                         .HasColumnType("datetime2");
 

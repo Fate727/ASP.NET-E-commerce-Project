@@ -88,7 +88,7 @@ namespace Techhive.Controllers
 
                     // Sign in the user
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "User");
                 }
 
                 foreach (var error in result.Errors)

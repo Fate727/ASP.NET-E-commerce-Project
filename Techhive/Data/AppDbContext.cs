@@ -69,7 +69,5 @@ namespace Techhive.Data
                 .HasForeignKey(t => t.P_Id)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-
-
     }
 }

@@ -31,6 +31,7 @@ namespace Techhive.OrderModels
             [Required]
             public string PaymentMethod { get; set; }
 
+            public bool CancelRequested { get; set; }
             public ICollection<OrderItem> OrderItems { get; set; }
 
     }
