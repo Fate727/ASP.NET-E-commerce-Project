@@ -2142,24 +2142,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\3d415efe-f433-43cf-a8a7-9e2a203f67b4.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\431d6bdc-361c-491f-bd47-b2ba5d604503.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Techhive</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Techhive</BasePath>
-      <RelativePath>images/brands/431d6bdc-361c-491f-bd47-b2ba5d604503.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>yy0s0itwiu</Fingerprint>
-      <Integrity>FrSVBCwK93nGgA26HTT+xGiKSWHsaETSyDNj5dEBIIM=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\431d6bdc-361c-491f-bd47-b2ba5d604503.png'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\443274bf-3fb4-4ed0-9824-7f7f0d525a9c.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Techhive</SourceId>

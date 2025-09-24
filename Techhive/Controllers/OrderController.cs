@@ -476,6 +476,23 @@ namespace Techhive.Controllers
                                 TrendingScore = 0
                             });
                         }
+                        var recommendation = _context.Recommendations
+                    .FirstOrDefault(r => r.UserID == order.UserId && r.P_Id == item.P_Id);
+                        if (recommendation != null)
+                        {
+                            recommendation.IsOrdered = true;
+                            recommendation.UpdatedAt = DateTime.Now;
+                        }
+                        else
+                        {
+                            _context.Recommendations.Add(new Recommendation
+                            {
+                                UserID = order.UserId,
+                                P_Id = item.P_Id,
+                                IsOrdered = true,
+                                UpdatedAt = DateTime.Now
+                            });
+                        }
                     }
                 }
 

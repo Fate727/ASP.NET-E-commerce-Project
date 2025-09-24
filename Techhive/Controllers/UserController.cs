@@ -297,7 +297,7 @@ namespace Techhive.Controllers
                 {
                     UserID = userId,
                     P_Id = productId,
-                    Type = type, // "view", "addtocart".
+                    Type = type,
                     V_Count = 1,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
@@ -307,7 +307,6 @@ namespace Techhive.Controllers
                 await _db.Recommendations.AddAsync(newRec);
             }
 
-            // Now handle Trending table (track total views for the product)
             var existingTrending = await _db.Trendings
                 .FirstOrDefaultAsync(t => t.P_Id == productId);
 
@@ -367,10 +366,12 @@ namespace Techhive.Controllers
             switch (sort)
             {
                 case "1": // Featured - based on T_Views (Trending views)
-                    return ApplyTrending(query);  
-                
-                case "2": // Recommedation - based on T_Views (Trending views)
-                    return ApplyRecommendation(query);
+                    return ApplyTrending(query);
+
+                case "2":
+                    var userId = _userManager.GetUserId(User); 
+                    return ApplyRecommendation(query, userId);
+
 
                 case "3": // Best Selling - based on P_Views (Ordered popularity)
                     return ApplyPopular(query);
@@ -405,28 +406,64 @@ namespace Techhive.Controllers
             var trendingQuery = from p in query
                                 join t in _db.Trendings on p.P_Id equals t.P_Id into pt
                                 from t in pt.DefaultIfEmpty()
-                                orderby t.TrendingScore descending // Order by TrendingScore from Trending table
+                                orderby t.TrendingScore descending 
                                 select p;
 
             return trendingQuery;
         }
-
-        private IQueryable<Product> ApplyRecommendation(IQueryable<Product> query)
+        private IQueryable<Product> ApplyRecommendation(IQueryable<Product> query, string userId)
         {
-            var bestRecommendationQuery = from p in query
-                                          join t in _db.Recommendations on p.P_Id equals t.P_Id into pt
-                                          from t in pt.DefaultIfEmpty()
-                                          orderby t.V_Count descending
-                                          select p;
+            // Step 1: Get product and brand IDs from user's ordered products
+            var orderedProductIds = _db.Recommendations
+                .Where(r => r.UserID == userId && r.IsOrdered)
+                .Select(r => r.P_Id)
+                .ToList();
 
-            var recommendedProducts = bestRecommendationQuery.Take(5); // Adjust count if needed
+            var orderedBrandIds = _db.Products
+                .Where(p => orderedProductIds.Contains(p.P_Id))
+                .Select(p => p.B_Id)
+                .Distinct()
+                .ToList();
 
-            if (!recommendedProducts.Any())
-                return query.OrderBy(p => p.Name);
+            // Step 2: Recommended products (not ordered and not from ordered brands)
+            var recommendedProducts = (from p in query
+                                       join r in _db.Recommendations
+                                           on p.P_Id equals r.P_Id
+                                       where r.UserID == userId
+                                             && !r.IsOrdered
+                                             && !orderedBrandIds.Contains(p.B_Id)
+                                       orderby r.V_Count descending
+                                       select p).Distinct().ToList();
 
-            var otherProducts = query.Except(recommendedProducts);
-            return recommendedProducts.Concat(otherProducts);
+            // Step 3: Get brands of recommended products
+            var recommendedBrandIds = recommendedProducts.Select(p => p.B_Id).Distinct().ToList();
+
+            // Step 4: Get other products of the same brands (not already recommended or ordered, and not from ordered brands)
+            var brandRelatedProducts = query
+                .Where(p => recommendedBrandIds.Contains(p.B_Id)
+                            && !recommendedProducts.Select(rp => rp.P_Id).Contains(p.P_Id)
+                            && !orderedProductIds.Contains(p.P_Id)
+                            && !orderedBrandIds.Contains(p.B_Id))
+                .ToList();
+
+            // Step 5: Get remaining products (not from ordered brands or already included lists)
+            var remainingProducts = query
+                .Where(p => !orderedProductIds.Contains(p.P_Id)
+                            && !orderedBrandIds.Contains(p.B_Id)
+                            && !recommendedProducts.Select(rp => rp.P_Id).Contains(p.P_Id)
+                            && !brandRelatedProducts.Select(bp => bp.P_Id).Contains(p.P_Id))
+                .OrderBy(p => p.Name)
+                .ToList();
+
+            // Step 6: Merge and return as IQueryable
+            var finalProductList = recommendedProducts
+                .Concat(brandRelatedProducts)
+                .Concat(remainingProducts)
+                .AsQueryable();
+
+            return finalProductList;
         }
+
 
         private IQueryable<Product> ApplyPopular(IQueryable<Product> query)
         {
